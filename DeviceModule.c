@@ -36,6 +36,10 @@ ssize_t onebyte_read(struct file *filep, char *buf, size_t
 {
 	/*please complete the function on your own*/
 	int byte_read = 0;
+	
+	/* Check if buffer has been written*/
+	if (*buf!=0)
+		return 0;
 
 	put_user(*(onebyte_data),buf);
 
